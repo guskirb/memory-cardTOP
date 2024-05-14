@@ -7,15 +7,16 @@
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 6vh;
   align-items: center;
   flex-flow: column;
+  z-index: 1;
 }
 
 .cardContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
@@ -24,15 +25,23 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-color: #dbdbdb;
+  gap: 20px;
+  background-color: #fafafac4;
   border-radius: 10px;
   width: 250px;
   height: 300px;
   cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   -webkit-animation: flip-vertical-right 0.4s
     cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.342);
+  background-color: #fafafaec;
 }
 
 .animate {
@@ -68,5 +77,16 @@
   100% {
     -webkit-transform: rotateY(0);
     transform: rotateY(0);
+  }
+}
+
+@media only screen and (max-height: 850px) {
+  .score {
+    top: 30px;
+  }
+
+  .card {
+    width: 200px;
+    height: 250px;
   }
 }

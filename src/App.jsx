@@ -15,7 +15,7 @@ function App() {
   async function fetchPokemon() {
     let pokemonList = [];
     let dexNum = [];
-    for (let x = 0; x < 8; x++) {
+    for (let x = 0; x < 10; x++) {
       const random = getRandomInt(1025);
       while (dexNum.includes(random)) {
         random = getRandomInt(1025);
@@ -66,8 +66,7 @@ function App() {
   return (
     <>
       <div className="score">
-        <h1>Score {score}</h1>
-        <h1>High Score {highScore}</h1>
+        <h1>SCORE: {score} | HIGH SCORE: {highScore}</h1>
       </div>
       <Card pokemon={pokemon} cardClicked={cardClicked} />
     </>

@@ -3,16 +3,16 @@ function Card({ pokemon, cardClicked }) {
 
   let listPokemon = pokemon.map((item) => (
     <div
-      className={"card"} 
+      className={"card"}
       key={Math.random()}
       onClick={() => {
         let cry = new Audio(item.cries.latest);
         cry.play();
-        cardClicked(item.name)
+        cardClicked(item.name);
       }}
     >
       <img src={item.sprites.front_default}></img>
-      <h2>{item.species.name.toUpperCase()}</h2>
+      <h2>{item.species.name.replace("-", " ").toUpperCase()}</h2>
     </div>
   ));
 
