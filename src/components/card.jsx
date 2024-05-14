@@ -1,6 +1,4 @@
 function Card({ pokemon, cardClicked }) {
-  console.log(pokemon);
-
   let listPokemon = pokemon.map((item) => (
     <div
       className={"card"}

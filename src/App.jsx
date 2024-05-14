@@ -36,7 +36,6 @@ function App() {
 
   function cardClicked(name) {
     if (clicked.includes(name)) {
-      console.log("LOSE");
       if (score > highScore) {
         setHighScore(score);
       }

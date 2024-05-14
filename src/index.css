@@ -1,6 +1,6 @@
 @font-face {
   font-family: Pokemon;
-  src: url(Pokemon\ Classic.ttf);
+  src: url(/Pokemon\ Classic.ttf);
 }
 
 :root {
@@ -20,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(background.jpg);
+  background-image: url(/background.jpg);
 }
 
 h1 {
