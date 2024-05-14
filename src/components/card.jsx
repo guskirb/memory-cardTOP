@@ -1,13 +1,14 @@
-function Card({ pokemon }) {
+function Card({ pokemon, cardClicked }) {
   console.log(pokemon);
 
   let listPokemon = pokemon.map((item) => (
     <div
-      className="card"
-      key={item.id}
+      className={"card"} 
+      key={Math.random()}
       onClick={() => {
         let cry = new Audio(item.cries.latest);
         cry.play();
+        cardClicked(item.name)
       }}
     >
       <img src={item.sprites.front_default}></img>
