@@ -14,8 +14,10 @@ function App() {
   async function fetchPokemon() {
     let pokemonList = [];
     for (let x = 0; x < 8; x++) {
-      const random = getRandomInt(1000);
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+      const random = getRandomInt(1025);
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${random}/`
+      );
       const data = await response.json();
       pokemonList.push(data);
     }
@@ -23,13 +25,15 @@ function App() {
   }
 
   useEffect(() => {
-    fetchPokemon().then((data) => setPokemon(data))
+    fetchPokemon().then((data) => setPokemon(data));
   }, []);
 
   return (
     <>
-      <h1>Score {score}</h1>
-      <h1>High Score {highScore}</h1>
+      <div className="score">
+        <h1>Score {score}</h1>
+        <h1>High Score {highScore}</h1>
+      </div>
       <Card pokemon={pokemon} />
     </>
   );
